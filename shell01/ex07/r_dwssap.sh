@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /etc/passwd | awk -F : '{print $1 ":" $2 ":" $3 ":" $4 ":" $6 ":" $7}' | sed -n '2~2p' | rev | awk -F : '{print $NF}' | sort -r | sed -n "$FT_LINE1, $FT_LINE2 p" | sed "s/$/, /g" | tr -d "\n" | sed "s/, $/\./"
