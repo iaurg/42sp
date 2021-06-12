@@ -36,31 +36,120 @@ void fill_values(int table[6][6])
 	1 - 4
 	*/
 
-	int count = 0;
 	int line = 0;
 	int column = 0;
+	int counter = 0;
 
-
-	while(count < 16)
-	{
+	while (counter < 36){
 		line = 0;
-		while(line < 6)
+		while (line <= 6)
 		{
 			column = 0;
-			while(column < 6)
+			while (column <= 6)
 			{
-				if(line == 1 && column == 4)
-				{
-					table[line][column] = 4;
-				}
+				if (table[line][column] == 4 && counter < 7) //linha de cima
+					table[line + 1][column] = line + 1;
 				column++;
 			}
 			line++;
 		}
-		count++;
+		counter++;
 	}
 
 
+	/*
+
+	// top
+	while (column <= 4)
+	{
+		if (table[line][column] == 4 || table[line][column] == 1) {
+			if (table[line][column] == 4)
+			{
+				table[line + 1][column] = 1;
+				column++;
+			}
+			else
+			{
+				table[line + 1][column] = 4;
+				column++;
+			}
+		}
+		column++;
+	}
+
+	// left
+	line = 1;
+	column = 0;
+	while (line <= 4)
+	{
+		if (table[line][column] == 4 || table[line][column] == 1) {
+			if (table[line][column] == 4)
+			{
+				table[line][column + 1] = 1;
+				table[line][column + 2] = 2;
+				table[line][column + 3] = 3;
+				table[line][column + 4] = 4;
+				column++;
+			}
+
+			if (table[line][column] == 1)
+			{
+				table[line - 1][column] = 4;
+				column++;
+			}
+		}
+		if (table[line][column] == 4 || table[line][column] == 1) {
+			table[line][column + 1] = 4;
+		}
+		line++;
+	}
+
+	// right
+	line = 1;
+	column = 5;
+	while (line <= 4)
+	{
+		if (table[line][column] == 4 || table[line][column] == 1) {
+			table[line][column - 1] = 4;
+		}
+		line++;
+	}
+	*/
+	/*
+	if (table[line][column] == 4 || table[line][column] == 1)
+		{
+		if (table[line][column] == 4)
+		{
+			table[line + 1][column] = 1;
+			column++;
+		}
+		else
+		{
+			table[line + 1][column] = 4;
+			column++;
+		}
+	}
+	column = 0;
+	while (column < 4)
+	{
+		line = 5;
+		column = 1;
+
+		if (table[line][column] == 4 || table[line][column] == 1)
+		{
+			if (table[line][column] == 4)
+			{
+				table[line + 1][column] = 1;
+				column++;
+			}
+			else
+			{
+				table[line + 1][column] = 4;
+				column++;
+			}
+		}
+	}
+	*/
 	print_board(table);
 }
 
