@@ -1,6 +1,3 @@
-// #include <stdio.h>
-// #include <string.h>
-
 int	ft_special_character(char letter)
 {
 	if (
@@ -56,7 +53,6 @@ char	*ft_strcapitalize(char *str)
 
 	x = 0;
 	ft_strlowcase(str);
-
 	while (str[x] != '\0')
 	{
 		letter = str[x];
@@ -79,6 +75,9 @@ char	*ft_strcapitalize(char *str)
 }
 
 /*
+#include <stdio.h>
+#include <string.h>
+
 -W]AqvPF39'B/P^/I+Q})Gzn*:?X:*[Y0,[Yq
 +W]Aqvpf39'B/P^/I+Q})Gzn*:?X:*[Y0,[Yq
 
@@ -97,15 +96,17 @@ char	*ft_strcapitalize(char *str)
 -@Isso a`mxr
 +@Isso A`mxr
 
+
+-Vk_(7X)Vmf#H'Fk?>8j@} /7VVxh3(X{6)Xb
++Vk_(7x)Vmf#H'Fk?>8j@} /7vvxh3(X{6)Xb
+
 -NULL
 +Null
-*/
 
-/*
 int	main(void)
 {
-	char original[] = ")D*_IG#Oeq";
-	char correct[] = ")D*_Ig#Oeq";
+	char original[] = "Vk_(7X)Vmf#H'Fk?>8j@} /7VVxh3(X{6)Xb";
+	char correct[] = "Vk_(7x)Vmf#H'Fk?>8j@} /7vvxh3(X{6)Xb";
 
 	printf("ORIGINAL: %s", original);
 	printf("\n");
